@@ -1,65 +1,7 @@
-<p align="center">
-  <!-- LOGO PLACEHOLDER -->
-  <img src="docs/assets/logo.png" alt="VetLink Logo" height="64" />
-</p>
-
 # VetLink
 
 A modern, multi-tenant CRM for veterinary practices — scheduling clients & patients, invoicing, medical documents, offers, orders, and more. Built with **Laravel 12**, **Filament 4**, and **Flux UI v2**.
 
-> WARNING: **Alpha Stage** — not production ready. Expect breaking changes and incomplete features.
-
-<p align="center">
-  <!-- SCREENSHOT PLACEHOLDERS -->
-  <img src="docs/screenshots/login.png" alt="Screenshot placeholder 1" width="720" />
-</p>
-
-<p align="center">
-  <!-- SCREENSHOT PLACEHOLDERS -->
-  <img src="docs/screenshots/dashboard.png" alt="Screenshot placeholder 1" width="720" />
-</p>
-
-<p align="center">
-  <!-- SCREENSHOT PLACEHOLDERS -->
-  <img src="docs/screenshots/waiting-room.png" alt="Screenshot placeholder 1" width="720" />
-</p>
-
-<p align="center">
-  <!-- SCREENSHOT PLACEHOLDERS -->
-  <img src="docs/screenshots/users.png" alt="Screenshot placeholder 1" width="720" />
-</p>
-
-<p align="center">
-  <!-- SCREENSHOT PLACEHOLDERS -->
-  <img src="docs/screenshots/edit-service.png" alt="Screenshot placeholder 1" width="720" />
-</p>
-
-<p align="center">
-  <!-- SCREENSHOT PLACEHOLDERS -->
-  <img src="docs/screenshots/invoice-form.png" alt="Screenshot placeholder 1" width="720" />
-</p>
-
-<p align="center">
-  <!-- SCREENSHOT PLACEHOLDERS -->
-  <img src="docs/screenshots/invoice-view.png" alt="Screenshot placeholder 1" width="720" />
-</p>
-
-<p align="center">
-  <!-- SCREENSHOT PLACEHOLDERS -->
-  <img src="docs/screenshots/arrival-confirmation.png" alt="Screenshot placeholder 1" width="720" />
-</p>
-
-<p align="center">
-  <!-- SCREENSHOT PLACEHOLDERS -->
-  <img src="docs/screenshots/portal.png" alt="Screenshot placeholder 1" width="720" />
-</p>
-
-<p align="center">
-  <!-- SCREENSHOT PLACEHOLDERS -->
-  <img src="docs/screenshots/portal-appointment-request.png" alt="Screenshot placeholder 1" width="720" />
-</p>
-
----
 
 ## Features
 
