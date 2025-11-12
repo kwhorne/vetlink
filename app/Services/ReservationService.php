@@ -1,0 +1,57 @@
+<?php
+
+namespace App\Services;
+
+use App\Enums\AppointmentRequestStatus;
+use App\Events\AppointmentRequestApproved;
+use App\Events\AppointmentRequestDenied;
+use App\Models\AppointmentRequest;
+use App\Models\Reservation;
+use App\Notifications\ReservationCanceled;
+
+class ReservationService
+{
+    public function cancel(Reservation $reservation, $cancelReason, $sendEmail = false): void
+    {
+        if ($reservation->canceled_at) return;
+
+        $reservation->update([
+            'canceled_at' => now(),
+            'cancel_reason' => $cancelReason,
+        ]);
+
+        //Alert service provider
+        $reservation->serviceProvider->notify(new ReservationCanceled($reservation));
+
+        //Send email to client
+        if ($sendEmail) {
+            $reservation->client->notify(new ReservationCanceled($reservation));
+        }
+    }
+
+    public function approveRequest(AppointmentRequest $appointmentRequest, ?string $note = null): void
+    {
+        $appointmentRequest->update([
+            'approval_status_id' => AppointmentRequestStatus::Approved->value,
+            'approval_by' => auth()->id(),
+            'approval_at' => now(),
+            'approval_note' => $note
+        ]);
+
+        //Create appointment
+
+        event(new AppointmentRequestApproved($appointmentRequest));
+    }
+
+    public function denyRequest(AppointmentRequest $appointmentRequest, ?string $note = null): void
+    {
+        $appointmentRequest->update([
+            'approval_status_id' => AppointmentRequestStatus::Denied->value,
+            'approval_by' => auth()->id(),
+            'approval_at' => now(),
+            'approval_note' => $note
+        ]);
+
+        event(new AppointmentRequestDenied($appointmentRequest));
+    }
+}
